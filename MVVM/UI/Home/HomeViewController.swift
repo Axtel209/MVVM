@@ -22,7 +22,7 @@ class HomeViewController: MVVMViewController<HomeViewModel, HomeView> {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         customView.pressMeButton.addTarget(self, action: #selector(toggleHelloWorld), for: .touchUpInside)
-        customView.helloWorldLabel.text = viewModel.title
+        customView.helloWorldLabel.text = viewModel.model.title
     }
 }
 

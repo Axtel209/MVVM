@@ -8,7 +8,12 @@
 
 import Foundation
 
-class HomeViewModel {
+final class HomeViewModel {
     // MARK: - Properties
-    let title = "Hello world"
+    let model: HelloWorld
+
+    // MARK - Initilizer
+    init() {
+        model = HelloWorld(title: "Hello World!")
+    }
 }

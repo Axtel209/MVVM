@@ -16,6 +16,7 @@
 		FBEE46E123490D4700515DEA /* ViewControllerBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E023490D4700515DEA /* ViewControllerBindable.swift */; };
 		FBEE46E423490F5000515DEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E323490F5000515DEA /* HomeViewModel.swift */; };
 		FBEE46E623490F5B00515DEA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E523490F5B00515DEA /* HomeView.swift */; };
+		FBEE46E82349374000515DEA /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E72349374000515DEA /* HelloWorld.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FBEE46E023490D4700515DEA /* ViewControllerBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBindable.swift; sourceTree = "<group>"; };
 		FBEE46E323490F5000515DEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FBEE46E523490F5B00515DEA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FBEE46E72349374000515DEA /* HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				FBEE46DF23490D3400515DEA /* Protocols */,
+				FBEE46E92349374600515DEA /* Models */,
 				FBEE46D823490C0900515DEA /* UI */,
 				FBEE46C4234909CA00515DEA /* AppDelegate.swift */,
 				FBEE46C6234909CA00515DEA /* SceneDelegate.swift */,
@@ -106,6 +109,14 @@
 				FBEE46E523490F5B00515DEA /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FBEE46E92349374600515DEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE46E72349374000515DEA /* HelloWorld.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				FBEE46C9234909CA00515DEA /* HomeViewController.swift in Sources */,
 				FBEE46C5234909CA00515DEA /* AppDelegate.swift in Sources */,
 				FBEE46C7234909CA00515DEA /* SceneDelegate.swift in Sources */,
+				FBEE46E82349374000515DEA /* HelloWorld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
