@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		FBEE46C5234909CA00515DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46C4234909CA00515DEA /* AppDelegate.swift */; };
 		FBEE46C7234909CA00515DEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46C6234909CA00515DEA /* SceneDelegate.swift */; };
-		FBEE46C9234909CA00515DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46C8234909CA00515DEA /* ViewController.swift */; };
+		FBEE46C9234909CA00515DEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46C8234909CA00515DEA /* HomeViewController.swift */; };
 		FBEE46CE234909CA00515DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEE46CD234909CA00515DEA /* Assets.xcassets */; };
 		FBEE46D1234909CA00515DEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEE46CF234909CA00515DEA /* LaunchScreen.storyboard */; };
 		FBEE46DB23490CA100515DEA /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46DA23490CA100515DEA /* MVVMViewController.swift */; };
 		FBEE46E123490D4700515DEA /* ViewControllerBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E023490D4700515DEA /* ViewControllerBindable.swift */; };
+		FBEE46E423490F5000515DEA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E323490F5000515DEA /* HomeViewModel.swift */; };
+		FBEE46E623490F5B00515DEA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE46E523490F5B00515DEA /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FBEE46C1234909CA00515DEA /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEE46C4234909CA00515DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBEE46C6234909CA00515DEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FBEE46C8234909CA00515DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBEE46C8234909CA00515DEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBEE46CD234909CA00515DEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBEE46D0234909CA00515DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBEE46D2234909CA00515DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBEE46DA23490CA100515DEA /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		FBEE46E023490D4700515DEA /* ViewControllerBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBindable.swift; sourceTree = "<group>"; };
+		FBEE46E323490F5000515DEA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FBEE46E523490F5B00515DEA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +101,9 @@
 		FBEE46E223490E5500515DEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FBEE46C8234909CA00515DEA /* ViewController.swift */,
+				FBEE46C8234909CA00515DEA /* HomeViewController.swift */,
+				FBEE46E323490F5000515DEA /* HomeViewModel.swift */,
+				FBEE46E523490F5B00515DEA /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -173,8 +179,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBEE46E123490D4700515DEA /* ViewControllerBindable.swift in Sources */,
+				FBEE46E623490F5B00515DEA /* HomeView.swift in Sources */,
+				FBEE46E423490F5000515DEA /* HomeViewModel.swift in Sources */,
 				FBEE46DB23490CA100515DEA /* MVVMViewController.swift in Sources */,
-				FBEE46C9234909CA00515DEA /* ViewController.swift in Sources */,
+				FBEE46C9234909CA00515DEA /* HomeViewController.swift in Sources */,
 				FBEE46C5234909CA00515DEA /* AppDelegate.swift in Sources */,
 				FBEE46C7234909CA00515DEA /* SceneDelegate.swift in Sources */,
 			);

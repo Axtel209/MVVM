@@ -8,12 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: MVVMViewController<HomeViewModel, HomeView> {
+
+    // MARK: - Lifecycle
+    required init(viewModel: ViewModel) {
+        super.init(viewModel: viewModel)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
     }
 
 
