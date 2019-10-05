@@ -9,4 +9,6 @@
 import Foundation
 
 class HomeViewModel {
+    // MARK: - Properties
+    let title = "Hello world"
 }
