@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: MVVMViewController<HomeViewModel, HomeView> {
-
     // MARK: - Lifecycle
     required init(viewModel: ViewModel) {
         super.init(viewModel: viewModel)
@@ -22,8 +21,18 @@ class HomeViewController: MVVMViewController<HomeViewModel, HomeView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        customView.pressMeButton.addTarget(self, action: #selector(toggleHelloWorld), for: .touchUpInside)
+        customView.helloWorldLabel.text = viewModel.title
     }
+}
 
-
+// MARK: - Actions
+extension HomeViewController {
+    @objc func toggleHelloWorld() {
+        UIView.animate(withDuration: 0.4) { [unowned self] in
+            let alpha: CGFloat = self.customView.helloWorldLabel.alpha == 1.0 ? 0.0 : 1.0
+            self.customView.helloWorldLabel.alpha = alpha
+        }
+    }
 }
 
