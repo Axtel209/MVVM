@@ -22,14 +22,5 @@ class HomeViewController: MVVMViewController<HomeViewModel> {
         super.viewDidLoad()
         
         homeView.helloWorldLabel.text = viewModel.model.title
-        homeView.pressMeButtonAction(self, action: #selector(toggleHelloWorld))
-    }
-    
-    // MARK: - Actions
-    @objc func toggleHelloWorld() {
-        UIView.animate(withDuration: 0.4) { [unowned self] in
-            let alpha: CGFloat = self.homeView.helloWorldLabel.alpha == 1.0 ? 0.0 : 1.0
-            self.homeView.helloWorldLabel.alpha = alpha
-        }
     }
 }

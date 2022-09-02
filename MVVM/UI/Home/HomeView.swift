@@ -24,16 +24,10 @@ class HomeView: UIView {
     private(set) var helloWorldLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .heavy)
-        label.alpha = 0.0
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    // MARK: - Accessors
-    
-    func pressMeButtonAction(_ target: Any, action: Selector) {
-        pressMeButton.addTarget(target, action: action, for: .touchUpInside)
-    }
 
     // MARK: - Lifecycle
     
@@ -50,22 +44,36 @@ class HomeView: UIView {
     // MARK: - Setup
     
     fileprivate func setupViews() {
-        addSubview(pressMeButton)
         addSubview(helloWorldLabel)
+        addSubview(pressMeButton)
+        
         setupLayout()
+        
+        pressMeButton.addTarget(self, action: #selector(toggleHelloWorld), for: .touchUpInside)
     }
     
     fileprivate func setupLayout() {
         NSLayoutConstraint.activate([
             pressMeButton.heightAnchor.constraint(equalToConstant: 55),
-            pressMeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            pressMeButton.widthAnchor.constraint(equalToConstant: 280),
+            pressMeButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            pressMeButton.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor, constant: 40),
             pressMeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            pressMeButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40),
+            pressMeButton.trailingAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -40),
 
             helloWorldLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             helloWorldLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             helloWorldLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor),
             helloWorldLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
         ])
+    }
+    
+    // MARK: - Actions
+    
+    @objc func toggleHelloWorld(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.25) { [unowned self] in
+            let alpha: CGFloat = helloWorldLabel.alpha == 1.0 ? 0.0 : 1.0
+            self.helloWorldLabel.alpha = alpha
+        }
     }
 }
