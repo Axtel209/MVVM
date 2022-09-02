@@ -10,7 +10,7 @@ import UIKit
 
 class HomeView: UIView {
     // MARK: - Views
-    private(set) var pressMeButton: UIButton = {
+    private var pressMeButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
@@ -24,12 +24,13 @@ class HomeView: UIView {
     private(set) var helloWorldLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .heavy)
-        label.alpha = 0.0
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -39,30 +40,40 @@ class HomeView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-// MARK: - Add Views
-extension HomeView {
-    /// This method is called to setup the view.
+    
+    // MARK: - Setup
+    
     fileprivate func setupViews() {
-        addSubview(pressMeButton)
         addSubview(helloWorldLabel)
+        addSubview(pressMeButton)
+        
         setupLayout()
+        
+        pressMeButton.addTarget(self, action: #selector(toggleHelloWorld), for: .touchUpInside)
     }
-}
-
-// MARK: - Layout Views
-extension HomeView {
-    /// This method is called to add coonstraints to all the subviews of the view.
+    
     fileprivate func setupLayout() {
-        pressMeButton.heightAnchor.constraint(equalToConstant: 55).isActive                                          = true
-        pressMeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 40).isActive    = true
-        pressMeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive     = true
-        pressMeButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -40).isActive = true
+        NSLayoutConstraint.activate([
+            pressMeButton.heightAnchor.constraint(equalToConstant: 55),
+            pressMeButton.widthAnchor.constraint(equalToConstant: 280),
+            pressMeButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            pressMeButton.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            pressMeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            pressMeButton.trailingAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor, constant: -40),
 
-        helloWorldLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive              = true
-        helloWorldLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive              = true
-        helloWorldLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor).isActive = true
-        helloWorldLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor).isActive  = true
+            helloWorldLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            helloWorldLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            helloWorldLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor),
+            helloWorldLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
+        ])
+    }
+    
+    // MARK: - Actions
+    
+    @objc func toggleHelloWorld(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.25) { [unowned self] in
+            let alpha: CGFloat = helloWorldLabel.alpha == 1.0 ? 0.0 : 1.0
+            self.helloWorldLabel.alpha = alpha
+        }
     }
 }

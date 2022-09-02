@@ -12,7 +12,8 @@ final class HomeViewModel {
     // MARK: - Properties
     let model: HelloWorld
 
-    // MARK - Initilizer
+    // MARK: - Lifecycle
+    
     init() {
         model = HelloWorld(title: "Hello World!")
     }

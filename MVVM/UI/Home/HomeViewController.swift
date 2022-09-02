@@ -8,31 +8,19 @@
 
 import UIKit
 
-class HomeViewController: MVVMViewController<HomeViewModel, HomeView> {
+class HomeViewController: MVVMViewController<HomeViewModel> {
+    // MARK: - Properties
+    private let homeView = HomeView()
+    
     // MARK: - Lifecycle
-    required init(viewModel: ViewModel) {
-        super.init(viewModel: viewModel)
+    
+    override func loadView() {
+        view = homeView
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        customView.pressMeButton.addTarget(self, action: #selector(toggleHelloWorld), for: .touchUpInside)
-        customView.helloWorldLabel.text = viewModel.model.title
+        
+        homeView.helloWorldLabel.text = viewModel.model.title
     }
 }
-
-// MARK: - Actions
-extension HomeViewController {
-    @objc func toggleHelloWorld() {
-        UIView.animate(withDuration: 0.4) { [unowned self] in
-            let alpha: CGFloat = self.customView.helloWorldLabel.alpha == 1.0 ? 0.0 : 1.0
-            self.customView.helloWorldLabel.alpha = alpha
-        }
-    }
-}
-
